@@ -130,7 +130,35 @@ function main {
   f_limitsconf
   f_adduser
   f_rootaccess
-  f_package_install
+  f_coredump
+  f_usbguard
+  f_postfix
+  f_apport
+  f_motdnews
+  f_rkhunter
+  f_sshconfig
+  f_sshdconfig
+  f_password
+  f_cron
+  f_ctrlaltdel
+  f_auditd
+  f_aide
+  f_rhosts
+  f_users
+  f_lockroot
+  f_package_remove
+  f_suid
+  f_restrictcompilers
+  f_umask
+  f_path
+  f_aa_enforce
+  f_aide_post
+  f_aide_timer
+  f_aptget_noexec
+  f_aptget_clean
+  f_systemddelta
+  f_post
+  f_checkreboot
   echo
 }
 
