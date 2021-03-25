@@ -130,7 +130,7 @@ function main {
   f_limitsconf
   f_adduser
   f_rootaccess
-
+  f_package_install
   echo
 }
 
