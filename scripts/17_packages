@@ -26,10 +26,12 @@ function f_package_install {
   echo "postfix postfix/mailname string $(hostname -f)" | debconf-set-selections
 
   local PACKAGE_INSTALL
-  PACKAGE_INSTALL="acct aide-common debsums gnupg2 haveged libpam-pwquality libpam-tmpdir needrestart openssh-server postfix rkhunter sysstat systemd-coredump tcpd update-notifier-common vlock $APPARMOR $AUDITD"
-
+  PACKAGE_INSTALL="acct aide-common debsums gnupg2 haveged libpam-pwquality libpam-tmpdir needrestart postfix rkhunter sysstat systemd-coredump tcpd update-notifier-common vlock $APPARMOR $AUDITD"
+  #PACKAGE_INSTALL="acct aide-common debsums gnupg2 haveged libpam-pwquality libpam-tmpdir needrestart openssh-server postfix rkhunter sysstat systemd-coredump tcpd update-notifier-common vlock $APPARMOR $AUDITD"
+  
   for deb_install in $PACKAGE_INSTALL; do
     $APT install --no-install-recommends "$deb_install"
+    sleep 15s
   done
 
   if [[ -f /etc/default/sysstat ]]; then
@@ -38,7 +40,6 @@ function f_package_install {
   fi
   
   echo "Installed and wait"
-  sleep 2m
   
   ((SCRIPT_COUNT++))
 }
